@@ -74,9 +74,9 @@ class local_ws_get_quiz_results extends external_api {
         "WHERE mdl_question_attempt_steps.userid=:userid and course=:courseid ".
         "GROUP BY mdl_question_attempt_steps.userid,mdl_quiz_attempts.uniqueid,questionid;";
         
-        $results = $DB->get_records_sql($sql, $vparams, $limitfrom=0, $limitnum=0)
+        $results = $DB->get_records_sql($sql, $vparams, $limitfrom=0, $limitnum=0);
 
-        return $results ;;
+        return $results;
     }
 
     /**

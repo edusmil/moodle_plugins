@@ -33,9 +33,9 @@ class local_ws_get_quiz_results extends external_api {
      */
     public static function ws_get_quiz_results_per_userid_parameters() {
         return new external_function_parameters(
-                array('userid' => new external_value(PARAM_TEXT, 'Please inform the user id,"', VALUE_DEFAULT, ''),
-                'courseid' => new external_value(PARAM_TEXT, 'Please inform the course id,"', VALUE_DEFAULT, ''))                
-        );
+                array('userid' => new external_value(PARAM_TEXT, 'Please inform the user id'),
+                'courseid' => new external_value(PARAM_TEXT, 'Please inform the course id'))                
+        );        
     }
 
     /**

@@ -26,7 +26,7 @@ $token = 'dff3bc6a9368d3b0db1ef59f6760ef7c';
 $domainname = 'http://YOURMOODLE';
 
 /// FUNCTION NAME
-$functionname = 'local_wstemplate_hello_world';
+$functionname = 'get_quiz_results_per_userid_and_courseid';
 
 /// PARAMETERS
 $welcomemsg = 'Hello, ';

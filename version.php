@@ -20,7 +20,7 @@ $plugin->version  = 2010112400;   // The (date) version of this module + 2 extra
                                   // display this version number with userdate (dev friendly)
 $plugin->requires = 2010112400;  // Requires this Moodle version - at least 2.0
 $plugin->component = 'local_get_quiz_results';
-$plugin->name = 'local_get_quiz_results';
+$plugin->pluginname = 'local_get_quiz_results';
 $plugin->cron     = 0;
 $plugin->release = '1.1 (Build: 2011101202)';
 $plugin->maturity = MATURITY_STABLE;

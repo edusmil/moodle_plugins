@@ -48,7 +48,7 @@ class local_ws_get_quiz_results extends external_api {
  
         //Parameter validation
         //REQUIRED
-        $vparams = self::validate_parameters(self::get_quiz_results_per_userid_and_courseid_parameters(),
+        $params = self::validate_parameters(self::get_quiz_results_per_userid_and_courseid_parameters(),
                 array('userid' => $userid, 'courseid' => $courseid));                
 
         //Context validation
@@ -74,7 +74,7 @@ class local_ws_get_quiz_results extends external_api {
         "WHERE mdl_question_attempt_steps.userid=:userid and course=:courseid ".
         "GROUP BY mdl_question_attempt_steps.userid,mdl_quiz_attempts.uniqueid,questionid;";
         
-        $results = $DB->get_records_sql($sql, $vparams, $limitfrom=0, $limitnum=0);
+        $results = $DB->get_records_sql($sql, $params, $limitfrom=0, $limitnum=0);
 
         return $results;
     }

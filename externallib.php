@@ -25,7 +25,7 @@ require(__DIR__.'/../../../config.php');
 
 defined('MOODLE_INTERNAL') || die();
 
-class local_ws_get_quiz_results_per_userid extends external_api {
+class local_ws_get_quiz_results extends external_api {
 
     /**
      * Returns description of method parameters

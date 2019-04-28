@@ -23,9 +23,9 @@
 require_once($CFG->libdir . "/externallib.php");
 require(__DIR__.'/../../../config.php');
 
-defined('MOODLE_INTERNAL') || die();
-
 class local_ws_get_quiz_results extends external_api {
+
+    defined('MOODLE_INTERNAL') || die();
 
     /**
      * Returns description of method parameters

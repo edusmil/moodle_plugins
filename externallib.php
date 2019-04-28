@@ -33,8 +33,7 @@ class local_ws_get_quiz_results extends external_api {
      */
     public static function get_quiz_results_per_userid_and_courseid_parameters() {
         return new external_function_parameters(
-                array('userid' => new external_value(PARAM_TEXT, 'Please inform the user id'),
-                'courseid' => new external_value(PARAM_TEXT, 'Please inform the course id'))                
+                array('userid' => new external_value(PARAM_TEXT, 'Please inform the user id'))                
         );        
     }
 
@@ -42,14 +41,14 @@ class local_ws_get_quiz_results extends external_api {
      * Returns welcome message
      * @return string welcome message
      */
-    public static function get_quiz_results_per_userid_and_courseid($userid,$courseid) {
+    public static function get_quiz_results_per_userid_and_courseid($userid) {
         global $USER;
         global $DB;
  
         //Parameter validation
         //REQUIRED
         $params = self::validate_parameters(self::get_quiz_results_per_userid_and_courseid_parameters(),
-                array('userid' => $userid, 'courseid' => $courseid));                
+                array('userid' => $userid));                
 
         //Context validation
         //OPTIONAL but in most web service it should present
@@ -71,7 +70,7 @@ class local_ws_get_quiz_results extends external_api {
         "JOIN mdl_quiz_attempts ON mdl_quiz_attempts.uniqueid= mdl_question_attempts.questionusageid ".
         "JOIN mdl_question_usages ON mdl_question_usages.id=mdl_question_attempts.questionusageid ".
         "JOIN mdl_quiz ON mdl_quiz.id=mdl_quiz_attempts.quiz  ".
-        "WHERE mdl_question_attempt_steps.userid=:userid and course=:courseid ".
+        "WHERE mdl_question_attempt_steps.userid=:userid and course=81 ".
         "GROUP BY mdl_question_attempt_steps.userid,mdl_quiz_attempts.uniqueid,questionid;";
         
         $results = $DB->get_records_sql($sql, $params, $limitfrom=0, $limitnum=0);

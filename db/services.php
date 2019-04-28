@@ -26,7 +26,7 @@ $functions = array(
         'local_ws_get_quiz_results' => array(
                 'classname'   => 'local_ws_get_quiz_results',
                 'methodname'  => 'get_quiz_results_per_userid_and_courseid',
-                'classpath'   => 'local/wstemplate/externallib.php',
+                'classpath'   => 'local/get_quiz_results/externallib.php',
                 'description' => 'Return quiz result by user and course',
                 'type'        => 'read',
         )

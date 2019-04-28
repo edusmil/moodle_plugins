@@ -31,10 +31,10 @@ class local_ws_get_quiz_results extends external_api {
      * Returns description of method parameters
      * @return external_function_parameters
      */
-    public static function ws_get_quiz_results_per_userid_parameters() {
+    public static function get_quiz_results_per_userid_and_courseid_parameters() {
         return new external_function_parameters(
-                array('userid' => new external_value(PARAM_TEXT, 'Please inform the user id'),
-                'courseid' => new external_value(PARAM_TEXT, 'Please inform the course id'))                
+                array('userid' => new external_value(PARAM_INT, 'Please inform the user id'),
+                'courseid' => new external_value(PARAM_INT, 'Please inform the course id'))                
         );        
     }
 
@@ -48,7 +48,7 @@ class local_ws_get_quiz_results extends external_api {
  
         //Parameter validation
         //REQUIRED
-        $vparams = self::validate_parameters(self::ws_get_quiz_results_per_userid_parameters(),
+        $vparams = self::validate_parameters(self::get_quiz_results_per_userid_and_courseid_parameters(),
                 array('userid' => $userid, 'courseid' => $courseid));                
 
         //Context validation

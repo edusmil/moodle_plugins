@@ -23,7 +23,7 @@
 
 // We defined the web service functions to install.
 $functions = array(
-        'local_wstemplate_hello_world' => array(
+        'local_ws_get_quiz_results' => array(
                 'classname'   => 'local_ws_get_quiz_results',
                 'methodname'  => 'get_quiz_results_per_userid_and_courseid',
                 'classpath'   => 'local/wstemplate/externallib.php',

@@ -19,7 +19,7 @@ $plugin->version  = 2010112400;   // The (date) version of this module + 2 extra
                                   // need then a $plugin->release human friendly date. For the moment, we use
                                   // display this version number with userdate (dev friendly)
 $plugin->requires = 2010112400;  // Requires this Moodle version - at least 2.0
-$plugin->component = 'get_quiz_results';
+$plugin->component = 'local_get_quiz_results';
 $plugin->cron     = 0;
 $plugin->release = '1.1 (Build: 2011101202)';
 $plugin->maturity = MATURITY_STABLE;

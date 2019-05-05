@@ -9,10 +9,10 @@ $CFG = new stdClass();
 
 $CFG->dbtype    = 'mysqli';
 $CFG->dblibrary = 'native';
-$CFG->dbhost    = '10.33.1.89';
-$CFG->dbname    = 'moodle';
-$CFG->dbuser    = 'moodle';
-$CFG->dbpass    = 'moodle';
+$CFG->dbhost    = '10.33.1.891';
+$CFG->dbname    = 'moodle1';
+$CFG->dbuser    = 'moodle2';
+$CFG->dbpass    = 'moodle3';
 $CFG->prefix    = 'mdl_';
 $CFG->dboptions = array (
   'dbpersist' => 0,
@@ -23,7 +23,7 @@ $CFG->dboptions = array (
 
 $CFG->wwwroot   = 'http://moodledev.einstein.br';
 $CFG->sslproxy  = '0';
-$CFG->dataroot  = '/var/www/html/moodledata';
+$CFG->dataroot  = '/var/www/html/moodledata1';
 $CFG->admin     = 'admin';
 
 $CFG->directorypermissions = 0777;

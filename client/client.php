@@ -22,14 +22,14 @@
 // 5- Run this script directly from your browser: you should see 'Hello, FIRSTNAME'
 
 /// SETUP - NEED TO BE CHANGED
-$token = 'dff3bc6a9368d3b0db1ef59f6760ef7c';
-$domainname = 'http://YOURMOODLE';
+$token = '9df631d27b0e3214d5a6c6326c373eb6';
+$domainname = 'https://avatreinamento.isbet.org.br';
 
 /// FUNCTION NAME
 $functionname = 'get_quiz_results_per_userid_and_courseid';
 
 /// PARAMETERS
-$welcomemsg = 'Hello, ';
+$welcomemsg = '3919';
 
 ///// XML-RPC CALL
 header('Content-Type: text/plain');

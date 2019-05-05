@@ -21,7 +21,7 @@ $CFG->dboptions = array (
   'dbcollation' => 'utf8_general_ci',
 );
 
-$CFG->wwwroot   = 'http://moodledev.einstein.br';
+$CFG->wwwroot   = 'http://moodledev.einstein.br2';
 $CFG->sslproxy  = '0';
 $CFG->dataroot  = '/var/www/html/moodledata1';
 $CFG->admin     = 'admin';

@@ -1,0 +1,28 @@
+SELECT mdl_question_attempt_steps.userid, mdl_quiz_attempts.uniqueid, 
+                SUM( CASE WHEN mdl_question_attempt_steps.state =  'gradedright' THEN 1  ELSE 0 END ) AS total_right, 
+				COUNT(DISTINCT questionid) AS total_questions,  
+          mdl_quiz_attempts.state, 
+		mdl_quiz.grade, sum(fraction),
+		(sum(fraction)/COUNT(DISTINCT questionid))*mdl_quiz.grade
+        FROM  `mdl_question_attempt_steps`  
+        JOIN mdl_question_attempts ON (  `questionattemptid` = mdl_question_attempts.id )  
+        JOIN mdl_question ON (  `questionid` = mdl_question.id )  
+        JOIN mdl_quiz_attempts ON mdl_quiz_attempts.uniqueid= mdl_question_attempts.questionusageid 
+        JOIN mdl_question_usages ON mdl_question_usages.id=mdl_question_attempts.questionusageid 
+        JOIN mdl_quiz ON mdl_quiz.id=mdl_quiz_attempts.quiz  
+        WHERE mdl_question_attempt_steps.userid=3922 and course=81 
+        GROUP BY mdl_quiz.grade,mdl_question_attempt_steps.userid,mdl_quiz_attempts.uniqueid,mdl_quiz_attempts.state;
+
+
+SELECT mdl_question_attempt_steps.userid,questionid, mdl_quiz_attempts.uniqueid, 
+                COUNT( CASE WHEN mdl_question_attempt_steps.state =  'gradedright' THEN 1  END ) AS rightanswer, 
+        COUNT( CASE WHEN mdl_question_attempt_steps.state =  'gradedwrong' THEN 1  END ) AS wronganswer,  mdl_quiz_attempts.state, 
+		mdl_quiz.grade, sum(fraction), sum(mdl_quiz_attempts.sumgrades)
+        FROM  `mdl_question_attempt_steps`  
+        JOIN mdl_question_attempts ON (  `questionattemptid` = mdl_question_attempts.id )  
+        JOIN mdl_question ON (  `questionid` = mdl_question.id )  
+        JOIN mdl_quiz_attempts ON mdl_quiz_attempts.uniqueid= mdl_question_attempts.questionusageid 
+        JOIN mdl_question_usages ON mdl_question_usages.id=mdl_question_attempts.questionusageid 
+        JOIN mdl_quiz ON mdl_quiz.id=mdl_quiz_attempts.quiz  
+        WHERE mdl_question_attempt_steps.userid=3922 and course=81 
+        GROUP BY mdl_quiz.grade,mdl_question_attempt_steps.userid,mdl_quiz_attempts.uniqueid,questionid,mdl_quiz_attempts.state;

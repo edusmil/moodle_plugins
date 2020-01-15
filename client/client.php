@@ -29,7 +29,7 @@ $domainname = 'http://YOURMOODLE';
 $functionname = 'get_quiz_results_per_userid_and_courseid';
 
 /// PARAMETERS
-$welcomemsg = 'Hello, ';
+$welcomemsg = '3919';
 
 ///// XML-RPC CALL
 header('Content-Type: text/plain');

@@ -29,13 +29,14 @@ $domainname = 'https://avatreinamento.isbet.org.br';
 $functionname = 'get_quiz_results_per_userid_and_courseid';
 
 /// PARAMETERS
-$welcomemsg = '3919';
+$userid = '3922';
+$courseid = '81';
 
 ///// XML-RPC CALL
 header('Content-Type: text/plain');
 $serverurl = $domainname . '/webservice/xmlrpc/server.php'. '?wstoken=' . $token;
 require_once('./curl.php');
 $curl = new curl;
-$post = xmlrpc_encode_request($functionname, array($welcomemsg));
+$post = xmlrpc_encode_request($functionname, array($userid,$courseid));
 $resp = xmlrpc_decode($curl->post($serverurl, $post));
 print_r($resp);
